@@ -1,0 +1,14 @@
+.movies{
+    display: flex;
+    justify-content: space-between;
+}
+
+.display-movies {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.display-movies h3 {
+    background: black;
+    color: tomato;
+}

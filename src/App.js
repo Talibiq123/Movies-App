@@ -1,4 +1,5 @@
 import React from "react";
+import './style.css';
 
 
 const moviesData = [
@@ -19,9 +20,10 @@ function App() {
 
 
     return (
-        <div>
-            {moviesData.map((movie, index) => (
-                <div key={index}>
+        <div className="movies">
+            {
+                moviesData.map((movie, index) => (
+                <div key={index} className="display-movies">
                     <h3>{movie.name}</h3>
                 </div>
             ))}

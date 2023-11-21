@@ -1,34 +1,23 @@
-import React from "react";
-import './style.css';
+import React,{useState} from "react";
+import "./style.css"
+import DisplayMovies from "./Components/DisplayMovies";
+import SelectedMovies from "./Components/SelectedMovies";
 
 
-const moviesData = [
-    {name: "The Shawshank Redemption", rating: 9.8, year: 1994},
-    {name: "The Godfather", rating: 9.2, year: 1972},
-    {name: "The Godfather II", rating: 9.0, year: 1974},
-    {name: "The Dark Knight", rating: 9.0, year: 2008},
-    {name: "Taare Jameen Par", rating: 8.4, year: 2007},
-    {name: "Schindler's List", rating: 8.9, year: 1993},
-    {name: "Pulp Fiction", rating: 8.9, year: 1994},
-    {name: "The Lord of the Ring: Return of the King", rating: 8.9, year: 2003},
-    {name: "Jeena Sirf Mere Liye", rating: 4.5, year: 2004},
-]
+
+const App = () => {
+    let [clickedMovie, setClickedMovie] = useState({});
 
 
-function App() {
-    
-
-
-    return (
+    return(
         <div className="movies">
-            {
-                moviesData.map((movie, index) => (
-                <div key={index} className="display-movies">
-                    <h3>{movie.name}</h3>
-                </div>
-            ))}
+                <DisplayMovies  addSelectedMovies={setClickedMovie}/>
+
+                <SelectedMovies  selectedMovie={clickedMovie}/>
+              
+                    
         </div>
-    );
-}
+    )
+}   
 
 export default App;
